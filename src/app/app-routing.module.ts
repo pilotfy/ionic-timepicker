@@ -9,27 +9,27 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'reactive-form',
-    loadChildren: './reactive-form/reactive-form.module#ReactiveFormPageModule'
+    loadChildren: () => import('./reactive-form/reactive-form.module').then(m => m.ReactiveFormPageModule)
   },
   {
     path: 'template-driven-form',
-    loadChildren: './template-driven-form/template-driven-form.module#TemplateDrivenFormPageModule'
+    loadChildren: () => import('./template-driven-form/template-driven-form.module').then(m => m.TemplateDrivenFormPageModule)
   },
   {
     path: 'timepicker-directive',
-    loadChildren: './timepicker-directive/timepicker-directive.module#TimepickerDirectivePageModule'
+    loadChildren: () => import('./timepicker-directive/timepicker-directive.module').then(m => m.TimepickerDirectivePageModule)
   },
   {
     path: 'timepicker-component',
-    loadChildren: './timepicker-component/timepicker-component.module#TimepickerComponentPageModule'
+    loadChildren: () => import('./timepicker-component/timepicker-component.module').then(m => m.TimepickerComponentPageModule)
   },
   {
     path: 'timepicker-button',
-    loadChildren: './timepicker-button/timepicker-button.module#TimepickerButtonPageModule'
+    loadChildren: () => import('./timepicker-button/timepicker-button.module').then(m => m.TimepickerButtonPageModule)
   }
 ];
 
