@@ -1,4 +1,4 @@
-import { Component, OnInit, forwardRef, Input, ElementRef, Renderer } from '@angular/core';
+import { Component, OnInit, forwardRef, Input, ElementRef, Renderer2 } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { IonicTimepickerModalComponent } from './ionic-timepicker-modal/ionic-timepicker-modal.component';
@@ -35,7 +35,7 @@ export class IonicTimepickerComponent implements OnInit, ControlValueAccessor {
   constructor(
     public modalCtrl: ModalController,
     public el: ElementRef,
-    public renderer: Renderer
+    public renderer: Renderer2
   ) { }
 
   ngOnInit() {
@@ -59,10 +59,10 @@ export class IonicTimepickerComponent implements OnInit, ControlValueAccessor {
       this.el.nativeElement.appendChild(this.closeIcon);
 
       this.renderer.listen(this.closeIcon, 'click', (event) => {
-        // console.log('button clicks');
-        this.selectedTime = '';
-        this.value = '';
-      });
+    // console.log('button clicks');
+    this.selectedTime = '';
+    this.value = '';
+});
     }
   }
 
